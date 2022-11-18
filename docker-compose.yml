@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  cardapio:
+    image: cardapio
+    build:
+      context: .
+    env_file:
+      - envs/postgres.env
+    volumes:
+      - ./django:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    env_file:
+      - envs/postgres.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
