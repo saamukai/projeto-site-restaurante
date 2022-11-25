@@ -1,0 +1,49 @@
+
+/* ESTILOS GLOBAIS  */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(30, 29, 29);
+}
+
+main {
+    min-height: 70vh;
+    background-color: #ffffff;
+}
+
+
+footer {
+    border-top-style: solid;
+    border-top-color: rgb(0, 98, 255);
+    border-top-width: 2%;
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    background-color: rgb(30, 29, 29);
+}
+
+.navbarboteco {
+    border-bottom-style: solid;
+    border-bottom-color: rgb(0, 98, 255);
+    border-bottom-width: 2%;
+    color: rgb(255, 255, 255);
+    font-style: normal;
+    background-color: rgb(30, 29, 29);
+}
+
+.navlist {
+    margin-bottom: 8%;
+    display: flex;
+    list-style: none;
+}
+
+.navlist li {
+    margin-top: 8%;
+    letter-spacing: 2px;
+    margin-right: 10%;
+}
+
+.logo {
+    margin-top: 6%;
+}
