@@ -9,7 +9,6 @@ class Categoria(models.Model):
         return "{} ({})".format(self.nome, self.descricao)
 
 class Produto (models.Model):
-    numero = models.IntegerField(verbose_name="Número")
     nome = models.CharField(max_length=50)
     descricao = models.CharField(max_length=150, verbose_name="Descrição")
     preco = models.DecimalField(decimal_places=2, max_digits=6)
@@ -18,4 +17,4 @@ class Produto (models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
 
     def __str__(self):
-        return "{} {} {} ({})".format(self.numero, self.nome, self.preco, self.descricao)
+        return "{} {} ({})".format(self.nome, self.preco, self.descricao)

@@ -4,19 +4,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1">
-                <a href="/"><img src="{% static 'images/favicon.png' %}" style="width: 70%; margin-top: 15%; margin-left: 30%"></a>
+                <a href="{% url 'home' %}"><img src="{% static 'images/favicon.png' %}" style="width: 70%; margin-top: 15%; margin-left: 30%"></a>
             </div>
             <div class="col-md-2">
-                <h1 class="logo"><a href="/">BOTECO<span>.</span></a></h1>
+                <h1 class="logo"><a href="{% url 'home' %}">BOTECO<span>.</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
             <div class="col-md-5"></div>
             <div class="col-md-4">
                 <ul class="navlist">
-                        <li><a class="nav-link scrollto" href="/eventos">Eventos</a></li>
-                        <li><a class="nav-link scrollto" href="/cardapio">Cardapio</a></li>
-                        <li><a class="nav-link scrollto" href="/reservas">Reservas</a></li>
+                        <li><a class="nav-link scrollto" href="{% url 'eventos' %}">Eventos</a></li>
+                        <li><a class="nav-link scrollto" href="{% url 'cardapio' %}">Cardapio</a></li>
+                        <li><a class="nav-link scrollto" href="{% url 'reservas' %}">Reservas</a></li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+{% load static %}
+{%block 'title'%} Excluir Produto {%endblock%}
+{% block 'conteudopagina' %}
+
+<h1>Excluir Produto</h1>
+<p class="lead">Confirme para excluir o produto</p>
+<br>
+
+<form action="" method="POST">
+    <p>Deseja excluir a categoria <b>{{ object }}</b>?</p>
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <br>
+
+    <button type="submit" class="btn btn-danger">Excluir</button>
+</form>
+
+{% endblock %}

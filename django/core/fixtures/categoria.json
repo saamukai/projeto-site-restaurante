@@ -1,0 +1,10 @@
+[
+{
+  "model": "products.categoria",
+  "pk": 2,
+  "fields": {
+    "nome": "TesteCategoria",
+    "descricao": "Teste"
+  }
+}
+]
