@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+{% load static %}
+{%block 'title'%} Cadastrar Categoria {%endblock%}
+{% block 'conteudopagina' %}
+
+<h1>Cadastrar Categoria</h1>
+<p class="lead">Preencha todos os campos</p>
+<br>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <br>
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+
+{% endblock %}
