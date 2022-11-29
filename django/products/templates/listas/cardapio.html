@@ -1,6 +1,6 @@
 {% extends 'template.html' %}
 {% load static %}
-{%block 'title'%} Produtos | Cardápio {%endblock%}
+{%block 'title'%} Cardápio {%endblock%}
 {% block 'conteudopagina' %}
 
 <h1>Cardápio</h1>
@@ -9,22 +9,20 @@
 <h2>{{ categoria.nome }}</h2>
 <div class="table-responsive">
     <table class="table table-striped">
-        <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Opções</th>
-        </tr>
         {% for produto in object_list %}
         {% if produto.categoria == categoria %}
+
         <tr>
+            <td>{{ produto.numero }}</td>
             <td>{{ produto.nome }}</td>
             <td>{{ produto.descricao }}</td>
             <td>{{ produto.preco }}</td>
+            {% if request.user.is_authenticated %}
             <td>
                 <a href="{% url 'editar-produto' produto.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
                 <a href="{% url 'deletar-produto' produto.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
             </td>
+            {% endif %}
         </tr>
         {% endif %}
         {% empty %}
@@ -39,8 +37,10 @@
 <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3">
+        {% if request.user.is_authenticated %}
             <a href="{% url 'lista-categoria' %}" class="btn btn-secondary" title="Editar Categorias">Editar Categorias</a>
             <a href="{% url 'cadastrar-produto' %}" class="btn btn-primary" title="Cadastrar Novo Produto">Novo Produto</a>
+        {% endif %}
     </div>
  </div>
 

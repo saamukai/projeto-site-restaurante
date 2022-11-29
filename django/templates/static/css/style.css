@@ -5,31 +5,43 @@
     padding: 0;
 }
 body {
-    background-color: rgb(30, 29, 29);
+    background-color: rgb(26, 26, 26);
 }
 
 main {
     min-height: 80vh;
-    background-color: #ffffff;
+    background-color: white;
 }
 
 
 footer {
     border-top-style: solid;
-    border-top-color: rgb(0, 98, 255);
+    border-top-color: rgb(233, 210, 0);
     border-top-width: 2%;
     color: rgb(255, 255, 255);
     font-style: normal;
-    background-color: rgb(30, 29, 29);
+    background-color: rgb(0, 0, 0);
+}
+.footer {
+    margin-top: 2%;
+    padding-bottom: 2%;
 }
 
+/* NAVBAR STYLE */
 .navbarboteco {
     border-bottom-style: solid;
-    border-bottom-color: rgb(0, 98, 255);
+    border-bottom-color: rgb(233, 210, 0);
     border-bottom-width: 2%;
     color: rgb(255, 255, 255);
     font-style: normal;
-    background-color: rgb(30, 29, 29);
+    background-color: rgb(0, 0, 0);
+}
+.logonav {
+    margin-top: 1%;
+}
+.nav-nameuser {
+    margin-top: 3%;
+    align-self: right;
 }
 
 .navlist {
@@ -41,9 +53,12 @@ footer {
 .navlist li {
     margin-top: 8%;
     letter-spacing: 2px;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 .logo {
     margin-top: 6%;
+}
+.logo a {
+    color: yellow;
 }

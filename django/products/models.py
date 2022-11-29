@@ -3,10 +3,9 @@ from django.db import models
 # Create your models here.
 class Categoria(models.Model):
     nome = models.CharField(max_length=50)
-    descricao = models.CharField(max_length=150, verbose_name="Descrição")
 
     def __str__(self):
-        return "{} ({})".format(self.nome, self.descricao)
+        return "{}".format(self.nome)
 
 class Produto (models.Model):
     nome = models.CharField(max_length=50)

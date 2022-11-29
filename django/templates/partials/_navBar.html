@@ -3,20 +3,32 @@
 <div class="navbarboteco">
     <div class="container">
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-1 logonav">
                 <a href="{% url 'home' %}"><img src="{% static 'images/favicon.png' %}" style="width: 70%; margin-top: 15%; margin-left: 30%"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 logonav">
                 <h1 class="logo"><a href="{% url 'home' %}">BOTECO<span>.</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
-            <div class="col-md-5"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-1 nav-nameuser" align="right">
+                {% if request.user.is_authenticated %}
+                    <a style="text-decoration: none; color: white;" href="{% url 'home' %}">
+                        Olá, <b style="color: yellow;">{{ request.user }}</b>
+                    </a>
+                {% endif %}
+            </div>
             <div class="col-md-4">
                 <ul class="navlist">
-                        <li><a class="nav-link scrollto" href="{% url 'eventos' %}">Eventos</a></li>
-                        <li><a class="nav-link scrollto" href="{% url 'cardapio' %}">Cardapio</a></li>
-                        <li><a class="nav-link scrollto" href="{% url 'reservas' %}">Reservas</a></li>
+                    <li><a class="btn btn-outline-warning" href="{% url 'eventos' %}">Eventos</a></li>
+                    <li><a class="btn btn-outline-warning" href="{% url 'cardapio' %}">Cardapio</a></li>
+                    <li><a class="btn btn-outline-warning" href="{% url 'reservas' %}">Reservas</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a class="btn btn-danger" href="{% url 'logout' %}">Sair</a></li>
+                    {% else %}
+                        <li><a class="btn btn-primary" href="{% url 'login' %}">Entrar</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

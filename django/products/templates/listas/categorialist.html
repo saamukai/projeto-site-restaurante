@@ -1,40 +1,45 @@
 {% extends 'template.html' %}
 {% load static %}
-{%block 'title'%} Categorias Cadastradas {%endblock%}
+{%block 'title'%} Categorias {%endblock%}
 {% block 'conteudopagina' %}
-
-<h1>Categorias Registradas</h1>
-<hr>
-<div class="table-responsive">
-    <table class="table table-striped">
-        <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Opções</th>
-        </tr>
-        {% for categoria in object_list %}
-        <tr>
-            <td>{{ categoria.nome }}</td>
-            <td>{{ categoria.descricao }}</td>
-            <td>
-                <a href="{% url 'editar-categoria' categoria.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
-                <a href="{% url 'deletar-categoria' categoria.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="3">Nenhuma categoria cadastrada</td>
-        </tr>
-        {% endfor %}
-    </table>
-</div>
+{% if request.user.is_authenticated %}
 
 <div class="row">
-    <div class="col-md-10"></div>
-    <div class="col-md-2">
-            <a href="{% url 'cadastrar-categoria' %}" class="btn btn-primary" title="Cadastrar Novo Produto">Nova Categoria</a>
-    </div>
- </div>
+    <div class="col-md-4 mx-auto">
+        <h1>Categorias Registradas</h1>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Opções</th>
+                </tr>
+                {% for categoria in object_list %}
+                <tr>
+                    <td>{{ categoria.nome }}</td>
+                    <td>
+                        <a href="{% url 'editar-categoria' categoria.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
+                        <a href="{% url 'deletar-categoria' categoria.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">Nenhuma categoria cadastrada</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
 
+        <div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-md-5" align="right">
+                    <a href="{% url 'cadastrar-categoria' %}" class="btn btn-primary" title="Cadastrar Novo Produto">Nova Categoria</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+    {% include 'partials/_noPerm.html' %}
+{% endif %}
 
 {% endblock %}

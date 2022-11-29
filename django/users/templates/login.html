@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block 'title'%} Login {%endblock%}
+{% block 'conteudopagina' %}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <h1 align="center">Faça Login</h1>
+        <p align="center" class="lead">Preencha todos os campos para acessar o painel</p>
+        <br>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form|crispy}}
+            <br>
+
+            <a align="right"><button type="submit" class="btn btn-primary">Entrar</button></a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

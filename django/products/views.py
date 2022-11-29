@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 ## PRODUCTS CREATE
 class CategoriaCreate(CreateView):
     model = models.Categoria
-    fields = ['nome', 'descricao']
+    fields = ['nome']
     template_name = 'cadastros/formcategoria.html'
     success_url = reverse_lazy("lista-categoria")
 
@@ -21,7 +21,7 @@ class ProdutoCreate(CreateView):
 ## UPDATE PRODUCTS
 class CategoriaUpdate(UpdateView):
     model = models.Categoria
-    fields = ['nome', 'descricao']
+    fields = ['nome']
     template_name = 'cadastros/formcategoria.html'
     success_url = reverse_lazy("lista-categoria")
 
