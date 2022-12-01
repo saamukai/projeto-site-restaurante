@@ -3,17 +3,25 @@
 {%block 'title'%} Cardápio {%endblock%}
 {% block 'conteudopagina' %}
 
-<h1>Cardápio</h1>
+<h1 align="center">Cardápio</h1>
 <hr>
+
 {% for categoria in categorias %}
-<h2>{{ categoria.nome }}</h2>
+<h3 class="bg-warning" style="border-radius: 3px; padding: 0.2%">{{ categoria.nome }}</h3>
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            {% if request.user.is_authenticated %}
+            <th>Opções</th>
+            {% endif %}
+        </tr>
+
         {% for produto in object_list %}
         {% if produto.categoria == categoria %}
-
         <tr>
-            <td>{{ produto.numero }}</td>
             <td>{{ produto.nome }}</td>
             <td>{{ produto.descricao }}</td>
             <td>{{ produto.preco }}</td>

@@ -2,30 +2,40 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from . import models
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from braces.views import GroupRequiredMixin
+
 # Create your views here.
 
 
 ## PRODUCTS CREATE
-class CategoriaCreate(CreateView):
+class CategoriaCreate(GroupRequiredMixin, CreateView):
+    group_required = 'Administrador'
+    login_url = reverse_lazy('noPerm')
     model = models.Categoria
     fields = ['nome']
     template_name = 'cadastros/formcategoria.html'
     success_url = reverse_lazy("lista-categoria")
 
-class ProdutoCreate(CreateView):
+class ProdutoCreate(GroupRequiredMixin, CreateView):
+    group_required = 'Administrador'
+    login_url = reverse_lazy('noPerm')
     model = models.Produto
     fields = ['nome', 'descricao', 'preco', 'disponivel', 'categoria']
     template_name = 'cadastros/formprod.html'
     success_url = reverse_lazy("cardapio")
 
 ## UPDATE PRODUCTS
-class CategoriaUpdate(UpdateView):
+class CategoriaUpdate(GroupRequiredMixin, UpdateView):
+    group_required = 'Administrador'
+    login_url = reverse_lazy('noPerm')
     model = models.Categoria
     fields = ['nome']
     template_name = 'cadastros/formcategoria.html'
     success_url = reverse_lazy("lista-categoria")
 
-class ProdutoUpdate(UpdateView):
+class ProdutoUpdate(GroupRequiredMixin, UpdateView):
+    login_url = reverse_lazy('noPerm')
     model = models.Produto
     fields = ['nome', 'descricao', 'preco', 'disponivel', 'categoria']
     template_name = 'cadastros/formprod.html'
@@ -33,18 +43,24 @@ class ProdutoUpdate(UpdateView):
 
 
 ## PRODUCTS DELETE
-class CategoriaDelete(DeleteView):
+class CategoriaDelete(GroupRequiredMixin, DeleteView):
+    group_required = 'Administrador'
+    login_url = reverse_lazy('noPerm')
     model = models.Categoria
     template_name = 'cadastros/formcategoriadelete.html'
     success_url = reverse_lazy("lista-categoria")
 
-class ProdutoDelete(DeleteView):
+class ProdutoDelete(GroupRequiredMixin, DeleteView):
+    group_required = 'Administrador'
+    login_url = reverse_lazy('noPerm')
     model = models.Produto
     template_name = 'cadastros/formproddelete.html'
     success_url = reverse_lazy("cardapio")
 
 ## LIST VIEW
-class CategoriaList(ListView):
+class CategoriaList(GroupRequiredMixin, ListView):
+    group_required = 'Administrador'
+    login_url = reverse_lazy('noPerm')
     model = models.Categoria
     template_name = 'listas/categorialist.html'
 

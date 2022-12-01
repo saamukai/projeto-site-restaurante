@@ -1,17 +1,16 @@
 {% load static %}
 
 <div class="navbarboteco">
-    <div class="container">
         <div class="row">
-            <div class="col-md-1 logonav">
-                <a href="{% url 'home' %}"><img src="{% static 'images/favicon.png' %}" style="width: 70%; margin-top: 15%; margin-left: 30%"></a>
+            <div class="col-md-2 logonav">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logobeer.png' %}" style="width: 30%; margin-top: 2%; margin-bottom: 5%" align="right"></a>
             </div>
             <div class="col-md-2 logonav">
                 <h1 class="logo"><a href="{% url 'home' %}">BOTECO<span>.</span></a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
             <div class="col-md-1 nav-nameuser" align="right">
                 {% if request.user.is_authenticated %}
                     <a style="text-decoration: none; color: white;" href="{% url 'home' %}">
@@ -27,10 +26,9 @@
                     {% if request.user.is_authenticated %}
                         <li><a class="btn btn-danger" href="{% url 'logout' %}">Sair</a></li>
                     {% else %}
-                        <li><a class="btn btn-primary" href="{% url 'login' %}">Entrar</a></li>
+                        <li class="destaque"><a class="btn btn-warning" href="{% url 'login' %}">Entrar</a></li>
                     {% endif %}
                 </ul>
             </div>
         </div>
-    </div>
 </div>

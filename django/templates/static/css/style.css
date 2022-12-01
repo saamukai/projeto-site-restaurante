@@ -5,14 +5,14 @@
     padding: 0;
 }
 body {
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(0, 0, 0);
 }
 
 main {
     min-height: 80vh;
-    background-color: white;
-}
+    background-image: url("../images/mainbackground.jpg")
 
+}
 
 footer {
     border-top-style: solid;
@@ -22,12 +22,19 @@ footer {
     font-style: normal;
     background-color: rgb(0, 0, 0);
 }
+
 .footer {
     margin-top: 2%;
     padding-bottom: 2%;
 }
 
+
+
+
 /* NAVBAR STYLE */
+.destaque a:hover{
+    color: white;
+}
 .navbarboteco {
     border-bottom-style: solid;
     border-bottom-color: rgb(233, 210, 0);
@@ -59,6 +66,43 @@ footer {
 .logo {
     margin-top: 6%;
 }
+.logo:hover{
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+}
 .logo a {
     color: yellow;
+}
+.logo a:hover{
+    color: white;
+}
+
+
+
+
+
+
+/* CONTEUDO DO SITE */
+.boxsimples {
+    margin-top: 7%;
+    padding: 6%;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.imagesposts {
+    margin: 1%;
+    width: 95%;
+    height: 40vh;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 1%;
+    border-radius: 10px;
+}
+.imagesposts:hover{
+    transform: scale(1.2);
+    transition-duration: 0.5s;
 }

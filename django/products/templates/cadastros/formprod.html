@@ -4,7 +4,6 @@
 {%block 'title'%} Cadastrar Produto {%endblock%}
 {% block 'conteudopagina' %}
 
-{% if request.user.is_authenticated %}
 <h1>Cadastrar Produto</h1>
 <p class="lead">Preencha todos os campos</p>
 <br>
@@ -17,8 +16,5 @@
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
-{% else %}
-    {% include 'partials/_noPerm.html' %}
-{% endif %}
 
 {% endblock %}

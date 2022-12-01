@@ -1,0 +1,2 @@
+funcionario boteco = comuser123
+moderador boteco = adminroot

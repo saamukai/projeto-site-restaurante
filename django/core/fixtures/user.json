@@ -16,5 +16,43 @@
     "groups": [],
     "user_permissions": []
   }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$awtV008BNK1h4j35nS8ZVm$kfGLp4ptfbe0vnWHQrjhVG7TP7RI7UwQNJ+8bX7sDyw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "AdminBoteco",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-01T13:35:51Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$Mo1S8BD1zdQ7mXBRJuSmXy$O0ipYJZA3kmJuMNxTtz+SIKl+0NxFHfoVvTRCAdpZAA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "FuncionarioBoteco",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-01T13:36:52.564Z",
+    "groups": [],
+    "user_permissions": []
+  }
 }
 ]

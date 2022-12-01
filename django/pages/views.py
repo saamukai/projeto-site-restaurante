@@ -12,3 +12,6 @@ class PageCardapio (TemplateView):
 
 class PageReservas (TemplateView):
     template_name = 'reservas.html'
+
+class PageNoPerm (TemplateView):
+    template_name = 'noPerm.html'

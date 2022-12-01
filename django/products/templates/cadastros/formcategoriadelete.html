@@ -3,7 +3,6 @@
 {%block 'title'%} Excluir Categoria {%endblock%}
 {% block 'conteudopagina' %}
 
-{% if request.user.is_authenticated %}
 <h1>Excluir Categoria</h1>
 <p class="lead">Confirme para excluir a categoria</p>
 <br>
@@ -18,9 +17,5 @@
 
     <button type="submit" class="btn btn-danger">Excluir</button>
 </form>
-
-{% else %}
-    {% include 'partials/_noPerm.html' %}
-{% endif %}
 
 {% endblock %}
