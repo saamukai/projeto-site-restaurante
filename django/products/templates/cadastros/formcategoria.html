@@ -4,17 +4,21 @@
 {%block 'title'%} Cadastrar Categoria {%endblock%}
 {% block 'conteudopagina' %}
 
-<h1>Cadastrar Categoria</h1>
-<p class="lead">Preencha todos os campos</p>
-<br>
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h1>Cadastrar Categoria</h1>
+        <p class="lead">Preencha todos os campos</p>
+        <br>
 
-<form action="" method="POST">
-    {% csrf_token %}
+        <form action="" method="POST">
+            {% csrf_token %}
 
-    {{ form|crispy }}
-    <br>
+            {{ form|crispy }}
+            <br>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

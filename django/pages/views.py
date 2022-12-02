@@ -2,16 +2,10 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 class PageHome (TemplateView):
-    template_name = 'home.html'
-
-class PageEventos (TemplateView):
-    template_name = 'eventos.html'
-
-class PageCardapio (TemplateView):
-    template_name = 'cardapio.html'
+    template_name = 'pages_guest/home.html'
 
 class PageReservas (TemplateView):
-    template_name = 'reservas.html'
+    template_name = 'pages_guest/reservas.html'
 
 class PageNoPerm (TemplateView):
-    template_name = 'noPerm.html'
+    template_name = 'pages_guest/noPerm.html'

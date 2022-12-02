@@ -1,9 +1,0 @@
-[
-{
-  "model": "products.categoria",
-  "pk": 2,
-  "fields": {
-    "nome": "Drinks"
-  }
-}
-]

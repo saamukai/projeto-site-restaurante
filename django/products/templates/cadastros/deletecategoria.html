@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+{% load static %}
+{%block 'title'%} Excluir Categoria {%endblock%}
+{% block 'conteudopagina' %}
+
+<div class="row">
+    <div class="col-md-8 mx-auto" align="center">
+        <h1>Excluir Categoria</h1>
+        <p class="lead">Confirme para excluir a categoria</p>
+        <br>
+
+        <form action="" method="POST">
+            <p>Deseja excluir a categoria <b>{{ object }}</b>?</p>
+
+            {% csrf_token %}
+
+            <br>
+
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

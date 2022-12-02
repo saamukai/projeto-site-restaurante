@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block 'title'%} Excluir Produto {%endblock%}
+{% block 'conteudopagina' %}
+
+<div class="row">
+    <div class="col-md-8 mx-auto" align="center">
+        <h1>Excluir Produto</h1>
+        <p class="lead">Confirme para excluir o produto</p>
+        <br>
+
+        <form action="" method="POST">
+            <p>Deseja excluir a categoria <b>{{ object }}</b>?</p>
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+            <br>
+
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

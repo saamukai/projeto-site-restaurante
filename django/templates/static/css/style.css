@@ -52,13 +52,13 @@ footer {
 }
 
 .navlist {
-    margin-bottom: 8%;
+    margin-bottom: 2%;
     display: flex;
     list-style: none;
 }
 
 .navlist li {
-    margin-top: 8%;
+    margin-top: 8.5%;
     letter-spacing: 2px;
     margin-right: 5%;
 }
@@ -86,7 +86,7 @@ footer {
 .boxsimples {
     margin-top: 7%;
     padding: 6%;
-    background-color: rgb(26, 26, 26);
+    background-color: #1a1a1a;
     color: white;
     border-style: solid;
     border-color: rgb(255, 255, 255);
@@ -105,4 +105,12 @@ footer {
 .imagesposts:hover{
     transform: scale(1.2);
     transition-duration: 0.5s;
+}
+
+/* CARDAPIO */
+.catcardapionome {
+    border-radius: 3px;
+    padding: 0.6%;
+    padding-left: 2%;
+    color: #1a1a1a;
 }
